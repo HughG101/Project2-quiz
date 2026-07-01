@@ -1,104 +1,104 @@
 // Array of quiz question objects
 const questions = [
     {
-        question: "What does HTML stand for?",
+        question: "What year did World War Two Start?",
         choices: [
-            "HyperText Markup Language",
-            "HighTech Modern Language",
-            "Hyperlink Text Machine Language",
-            "Home Tool Markup Language"
-        ],
-        correctIndex: 0
-    },
-    {
-        question: "Which HTML element is used for the main content of a page?",
-        choices: [
-            "<section>",
-            "<main>",
-            "<footer>",
-            "<nav>"
+            "1939",
+            "1941",
+            "1935",
+            "1945"
         ],
         correctIndex: 1
     },
     {
-        question: "Which CSS property changes the text color?",
+        question: "What was the first country that Germany Invaded to Start World War Two?",
         choices: [
-            "font-style",
-            "background-color",
-            "color",
-            "text-size"
+            "Poland",
+            "France",
+            "Soviet Union",
+            "Great Britain"
+        ],
+        correctIndex: 0
+    },
+    {
+        question: "What country was the target of operation Barbarossa?",
+        choices: [
+            "Italy",
+            "Empire of Japan",
+            "Soviet Union",
+            "Great Britain"
         ],
         correctIndex: 2
     },
     {
-        question: "Which CSS layout method is commonly used for one-dimensional layouts?",
+        question: "What was the Target of Operation Overlord",
         choices: [
-            "Flexbox",
-            "Tables",
-            "Alerts",
-            "JSON"
-        ],
-        correctIndex: 0
-    },
-    {
-        question: "Which keyword should you use instead of var for a value that will not change?",
-        choices: [
-            "let",
-            "const",
-            "fixed",
-            "static"
+            "Normandy",
+            "Italy",
+            "Africa",
+            "Iwo Jima"
         ],
         correctIndex: 1
     },
     {
-        question: "What is an array used for in JavaScript?",
+        question: "What Battle was Taffy 3 famous for fighting in?",
         choices: [
-            "Storing multiple values in one variable",
-            "Changing the page title only",
-            "Styling a webpage",
-            "Creating image files"
+            "Midway",
+            "Leyte Gulf",
+            "Coral Sea",
+            "Battle off Samar"
         ],
-        correctIndex: 0
+        correctIndex: 3
     },
     {
-        question: "Which symbol is used for comments on a single line in JavaScript?",
+        question: "What Aircraft Carriers did the United States sink During the battle of Midway?",
         choices: [
-            "<!-- comment -->",
-            "/* comment */",
-            "// comment",
-            "# comment"
+            "Zuiho, Hiyo, Junyo, Gamber Bay",
+            "Shinano, Yorktown, and Lexington",
+            "Akagi, Kaga, Soryu, and Hiryu",
+            "Kaga, Ryujo, Shokaku, and Zuikaku"
         ],
         correctIndex: 2
     },
     {
-        question: "What does a conditional statement help a program do?",
+        question: "What Day was D-Day?",
         choices: [
-            "Repeat code forever only",
-            "Make decisions based on conditions",
-            "Add images to CSS",
-            "Create a new HTML file"
+            "June 6, 1944",
+            "September 1, 1939",
+            "December 7, 1941",
+            "June 5, 1944"
         ],
-        correctIndex: 1
+        correctIndex: 2
     },
     {
-        question: "Which method can be used to select an HTML element by its id?",
+        question: "What United States Capital ships were sunk during the attack on Pearl Harbor?",
         choices: [
-            "document.getElementById()",
-            "document.makeElement()",
-            "document.styleElement()",
-            "document.newId()"
+            "USS Arizona",
+            "USS Oklahoma",
+            "USS West Virginia",
+            "All of the above"
+        ],
+        correctIndex: 3
+    },
+    {
+        question: "What United States Carrier was the most successful during World War Two?",
+        choices: [
+            "USS Enterprise",
+            "USS Yorktown",
+            "USS Hornet",
+            "USS Washington"
         ],
         correctIndex: 0
     },
     {
-        question: "What does responsive design mean?",
+        question: "What was the trials held for German War Criminals called?",
         choices: [
-            "A website only works on desktop",
-            "A website changes layout for different screen sizes",
-            "A website has no CSS",
-            "A website loads only images"
+            "Nuremberg Trials",
+            "Tokyo Trials",
+            "London Trials",
+            "Paris Trials"
         ],
-        correctIndex: 1
+        correctIndex: 0
     }
 ];
 
