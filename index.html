@@ -12,52 +12,57 @@
 <body>
     <header class="site-header">
         <h1>Web Development Quiz</h1>
-        <p>Test your Knowledge of HTML, CSS, and JavaScript</p>
+        <p>Test your knowledge of HTML, CSS, and JavaScript.</p>
     </header>
 
-<main class= "app-container">
-    <!-- Start Screen-->
-     <section id=""start-screen" class="card">
-    <hs> Ready to Begin?</hs>
-    <p> This quiz is 10 questions long. You will see one question at a time, get feedback after every answer, and recivev your final score at the end.</p>
-    <button id="start-btn"> Start Quiz</button>
+    <main class="app-container">
+        <!-- Start Screen -->
+        <section id="start-screen" class="card">
+            <h2>Ready to Begin?</h2>
+            <p>
+                This quiz is 10 questions long. You will see one question at a time,
+                get feedback after every answer, and receive your final score at the end.
+            </p>
+            <button id="start-btn">Start Quiz</button>
+        </section>
 
-<!-- Quiz Screen-->
-<section id="quiz-screen" class="card hide">
-    <div id="quiz-info">
-        <p id="progress">Question 1 of 10</p>
-        <p id="score">Score: 0</p>
-    </div>
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="card hidden">
+            <div class="quiz-info">
+                <p id="progress-text">Question 1 of 10</p>
+                <p id="score-text">Score: 0</p>
+            </div>
 
-    <div class="progress-bar">
-        <div id="progress-fill"></div>
-    </div>
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
 
-    <h2 id="question-text">Question text goes here</h2>
+            <h2 id="question-text">Question text goes here</h2>
 
-<form id="answer-form">
-    <div id="choices-container" class="choices-grid">
-<!-- JavaScript will add choices here -->
-    </div>
-    <button id="submit-btn" type="submit">Submit Answer</button>
-</form>
+            <form id="answer-form">
+                <div id="choices-container" class="choices-grid">
+                    <!-- JavaScript will add choices here -->
+                </div>
 
-<p id="feedback-message" class="feedback">  </p>
+                <button id="submit-btn" type="submit" disabled>Submit Answer</button>
+            </form>
 
-<button id="next-btn" class="secondary-btn hidden">Next Question</button>
-</section>
+            <p id="feedback-message" class="feedback"></p>
 
-<!-- Results Screen-->
- <section id="results-screen" class="card hidden">
-    <h2>Quiz Complete!</h2>
-    <p id="final-score">You Scored 0 out of 10.</p>
-    <p id="final-message">Results message goes here.</p>
-    <button id="restart-btn">Restart Quiz</button>
- </section>
-</main>
+            <button id="next-btn" class="secondary-btn hidden">Next Question</button>
+        </section>
 
-<footer class="site-footer">
-    <p>&copy; 2026 Web Development Quiz.</p>
-</footer>
+        <!-- Results Screen -->
+        <section id="results-screen" class="card hidden">
+            <h2>Quiz Complete!</h2>
+            <p id="final-score">You scored 0 out of 10.</p>
+            <p id="final-message">Results message goes here.</p>
+            <button id="restart-btn">Restart Quiz</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Web Development Quiz.</p>
+    </footer>
 </body>
 </html>
