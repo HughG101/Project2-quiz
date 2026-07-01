@@ -5,9 +5,9 @@
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #222;
+    font-family: Georgia, Georgia, 'Times New Roman', serif;
+    background: #2f3a2f;
+    color: #1f1f1f;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -18,12 +18,14 @@ body {
 .site-footer {
     text-align: center;
     padding: 20px;
-    background: #1e3a5f;
-    color: white;
+    background: #1d2b3a;
+    color: #f1e4c3;
+    border-bottom: 5px solid #6b1f1f;
 }
 
 .site-header h1 {
     margin-bottom: 5px;
+    border-bottom: none;
 }
 
 .site-header p,
@@ -43,12 +45,12 @@ body {
 /* Card style used for all screens */
 .card {
     width: 100%;
-    max-width: 700px;
-    background: white;
+    max-width: 720px;
+    background: #efe3c4;
     padding: 30px;
     border-radius: 12px;
-    border: 2px solid #d6dce3;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border: 2px solid #4b5320;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .hidden {
@@ -62,28 +64,31 @@ body {
     gap: 15px;
     font-weight: bold;
     margin-bottom: 15px;
+    color: #1b2b3a;
 }
 
 /* Progress bar */
 .progress-bar {
     width: 100%;
-    height: 14px;
-    background: #dce3ea;
+    height: 15px;
+    background: #c7b58a;
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 25px;
+    border: 1px solid #4b5320
 }
 
 #progress-fill {
     width: 0%;
     height: 100%;
-    background: #2b7a78;
+    background: #4b5320;
     transition: width 0.3s ease;
 }
 
 /* Question and choices */
 #question-text {
     margin-bottom: 20px;
+    color: #1b2b3a
 }
 
 .choices-grid {
@@ -97,33 +102,33 @@ body {
     align-items: center;
     gap: 10px;
     padding: 14px;
-    border: 2px solid #c8d1da;
+    border: 2px solid #6b6a4f;
     border-radius: 8px;
     cursor: pointer;
-    background: #f9fbfc;
+    background: #f7edcf;
     transition: 0.2s;
 }
 
 .choice-option:hover {
-    background: #eef4f8;
+    background: #ded0a5;
 }
 
 .choice-option.selected {
-    border-color: #1e3a5f;
-    background: #e6f0ff;
+    border-color: #1b2b3a;
+    background: #d4c28f;
 }
 
 .choice-option.correct {
-    border-color: #2e7d32;
-    background: #e8f5e9;
+    border-color: #2f5d34;
+    background: #cfe0bd;
 }
 
 .choice-option.incorrect {
-    border-color: #c62828;
-    background: #ffebee;
+    border-color: #7d1f1f;
+    background: #e3b5a8;
 }
 
-/* Feedback */
+/* Feedback Style*/
 .feedback {
     min-height: 28px;
     font-weight: bold;
@@ -131,42 +136,44 @@ body {
 }
 
 .feedback.correct-text {
-    color: #2e7d32;
+    color: #2f5d34;
 }
 
 .feedback.incorrect-text {
-    color: #c62828;
+    color: #7d1f1f;
 }
 
-/* Buttons */
+/* Buttons Style */
 button {
     border: none;
-    background: #1e3a5f;
-    color: white;
+    background: #4b5320;
+    color: #f1e4c3;
     padding: 12px 18px;
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 button:hover {
-    background: #2c5282;
+    background: #3b4219;
 }
 
 button:disabled {
-    background: #9aa6b2;
+    background: #8d8a72;
     cursor: not-allowed;
 }
 
 .secondary-btn {
-    background: #2b7a78;
+    background: #1d2b3a;
 }
 
 .secondary-btn:hover {
-    background: #23615f;
+    background: #13202d;
 }
 
-/* Mobile responsive design */
+/* Responsive Design */
 @media screen and (max-width: 600px) {
     .card {
         padding: 20px;
