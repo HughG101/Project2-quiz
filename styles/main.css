@@ -1,8 +1,11 @@
-/* General page setup */
+/* World War two Quiz Styling */
+
+/* Makes padding and boarders easier to control */
 * {
     box-sizing: border-box;
 }
 
+/* General Page Styling */
 body {
     margin: 0;
     font-family: Georgia, Georgia, 'Times New Roman', serif;
@@ -13,7 +16,7 @@ body {
     flex-direction: column;
 }
 
-/* Header and footer */
+/* Header and footer WW2 Styling */
 .site-header,
 .site-footer {
     text-align: center;
@@ -23,17 +26,19 @@ body {
     border-bottom: 5px solid #6b1f1f;
 }
 
+/* adds spacing under main header */
 .site-header h1 {
     margin-bottom: 5px;
     border-bottom: none;
 }
 
+/* Removes default margin from paragraphs in header and footer */
 .site-header p,
 .site-footer p {
     margin: 0;
 }
 
-/* Main layout */
+/* Centers the quiz card on the page */
 .app-container {
     flex: 1;
     display: flex;
@@ -42,7 +47,7 @@ body {
     padding: 30px 15px;
 }
 
-/* Card style used for all screens */
+/* Card style used on start, quiz, and result screens */
 .card {
     width: 100%;
     max-width: 720px;
@@ -53,11 +58,12 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
+/* Hides screens that should not be visable currently */
 .hidden {
     display: none;
 }
 
-/* Quiz info area */
+/* Question progress and score side by side*/
 .quiz-info {
     display: flex;
     justify-content: space-between;
@@ -67,7 +73,7 @@ body {
     color: #1b2b3a;
 }
 
-/* Progress bar */
+/* Outer Progress bar container */
 .progress-bar {
     width: 100%;
     height: 15px;
@@ -78,6 +84,7 @@ body {
     border: 1px solid #4b5320
 }
 
+/* Inner progress bar that JavaScript updates */
 #progress-fill {
     width: 0%;
     height: 100%;
@@ -85,18 +92,20 @@ body {
     transition: width 0.3s ease;
 }
 
-/* Question and choices */
+/* Styles the current question for user */
 #question-text {
     margin-bottom: 20px;
     color: #1b2b3a
 }
 
+/* Uses a CSS grid to stack answer choices with even spacing */
 .choices-grid {
     display: grid;
     gap: 12px;
     margin-bottom: 20px;
 }
 
+/* Styles each answer choice that the JavaScripts create */
 .choice-option {
     display: flex;
     align-items: center;
@@ -109,41 +118,47 @@ body {
     transition: 0.2s;
 }
 
+/* chanegs background for answer when user hovers over it */
 .choice-option:hover {
     background: #ded0a5;
 }
 
+/* Shows the user which answer isselected */
 .choice-option.selected {
     border-color: #1b2b3a;
     background: #d4c28f;
 }
 
+/* shows correct nswer in green */
 .choice-option.correct {
     border-color: #2f5d34;
     background: #cfe0bd;
 }
 
+/* shows incorrect answer in red */
 .choice-option.incorrect {
     border-color: #7d1f1f;
     background: #e3b5a8;
 }
 
-/* Feedback Style*/
+/* Feedback message text*/
 .feedback {
     min-height: 28px;
     font-weight: bold;
     margin-top: 10px;
 }
 
+/* Correct feedback text */
 .feedback.correct-text {
     color: #2f5d34;
 }
 
+/* Incorrect feedback text */
 .feedback.incorrect-text {
     color: #7d1f1f;
 }
 
-/* Buttons Style */
+/* General buttons style */
 button {
     border: none;
     background: #4b5320;
@@ -156,38 +171,47 @@ button {
     letter-spacing: 0.5px;
 }
 
+/* Darkens Buttons when Hovering */
 button:hover {
     background: #3b4219;
 }
 
+/* Shows display buttons as grey */
 button:disabled {
     background: #8d8a72;
     cursor: not-allowed;
 }
 
+/* Alternate button style for next question button */
 .secondary-btn {
     background: #1d2b3a;
 }
 
+/* Hover color for secondary buttons */
 .secondary-btn:hover {
     background: #13202d;
 }
 
-/* Responsive Design */
+/* Responsive Design for smaller screens */
 @media screen and (max-width: 600px) {
+    
+    /* hould reduce padding on smaller screens */
     .card {
         padding: 20px;
     }
 
+    /* Stacks progress and score vertically on smaller screens */
     .quiz-info {
         flex-direction: column;
         gap: 5px;
     }
 
+    /* Makes easier to tap on smaller screens / mobile */
     button {
         width: 100%;
     }
 
+    /* Makes the header text smaller on smaller screens */
     .site-header h1 {
         font-size: 1.6rem;
     }
