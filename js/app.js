@@ -8,7 +8,7 @@ const questions = [
             "1935",
             "1945"
         ],
-        correctIndex: 1
+        correctIndex: 0
     },
     {
         question: "What was the first country that Germany Invaded to Start World War Two?",
@@ -38,7 +38,7 @@ const questions = [
             "Africa",
             "Iwo Jima"
         ],
-        correctIndex: 1
+        correctIndex: 0
     },
     {
         question: "What Battle was Taffy 3 famous for fighting in?",
@@ -68,7 +68,7 @@ const questions = [
             "December 7, 1941",
             "June 5, 1944"
         ],
-        correctIndex: 2
+        correctIndex: 0
     },
     {
         question: "What United States Capital ships were sunk during the attack on Pearl Harbor?",
