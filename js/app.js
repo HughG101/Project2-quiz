@@ -1,4 +1,5 @@
 // Array of quiz question objects
+// Each object stores question text, answer choices, and index of the correct answer
 const questions = [
     {
         question: "What year did World War Two Start?",
@@ -102,13 +103,13 @@ const questions = [
     }
 ];
 
-// State variables
+// State variables and keeps track of the quiz while the user is taking it
 let currentQuestionIndex = 0;
 let score = 0;
 let selectedAnswerIndex = null;
 let answerSubmitted = false;
 
-// HTML element variables
+// HTML element variables connects JavaScript to the page 
 const startScreen = document.getElementById("start-screen");
 const quizScreen = document.getElementById("quiz-screen");
 const resultsScreen = document.getElementById("results-screen");
@@ -129,24 +130,25 @@ const feedbackMessage = document.getElementById("feedback-message");
 const finalScore = document.getElementById("final-score");
 const finalMessage = document.getElementById("final-message");
 
-// Event listeners
+// Event listeners tell the page what functions to run when the buttons are clicked
 startBtn.addEventListener("click", startQuiz);
 restartBtn.addEventListener("click", startQuiz);
 answerForm.addEventListener("submit", checkAnswer);
 nextBtn.addEventListener("click", goToNextQuestion);
 
-// Starts or restarts the quiz
+// Starts or restarts the quiz by resetting state variables and showing the quiz screen
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     selectedAnswerIndex = null;
     answerSubmitted = false;
 
+    // Switch from the start screen to the quiz screen
     showScreen("quiz");
     displayQuestion();
 }
 
-// Shows the correct screen
+// Shows the correct screen at a time
 function showScreen(screenName) {
     startScreen.classList.add("hidden");
     quizScreen.classList.add("hidden");
@@ -161,25 +163,30 @@ function showScreen(screenName) {
     }
 }
 
-// Displays the current question and answer choices
+// Displays the current question and creates the answer choices
 function displayQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
 
+    //reset answer state for the new question
     selectedAnswerIndex = null;
     answerSubmitted = false;
 
+    //updates the question text and clears previous choices and feedback
     questionText.textContent = currentQuestion.question;
     choicesContainer.innerHTML = "";
     feedbackMessage.textContent = "";
     feedbackMessage.className = "feedback";
 
+    //resets the buttosn for the new question
     submitBtn.disabled = true;
     submitBtn.classList.remove("hidden");
     nextBtn.classList.add("hidden");
 
+    //Updares score and progress text
     progressText.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
     scoreText.textContent = `Score: ${score}`;
 
+    //Updates the progress bar width based on the current qeustion
     const progressPercent = ((currentQuestionIndex) / questions.length) * 100;
     progressFill.style.width = `${progressPercent}%`;
 
@@ -188,47 +195,55 @@ function displayQuestion() {
         const label = document.createElement("label");
         label.classList.add("choice-option");
 
+        //Creates the raio button for this choice 
         const radio = document.createElement("input");
         radio.type = "radio";
         radio.name = "answer";
         radio.value = index;
 
+        //creates visable answer text
         const choiceText = document.createElement("span");
         choiceText.textContent = choice;
 
+        // Put the radio button and text inside the label
         label.appendChild(radio);
         label.appendChild(choiceText);
 
+        //when the chouce is clicked save which anser the user selected
         label.addEventListener("click", function() {
             selectAnswer(index);
         });
 
+        // Add the completed answer choice to the page
         choicesContainer.appendChild(label);
     });
 }
 
-// Handles selecting an answer
+// Saves selected answer and visually highlights it
 function selectAnswer(index) {
     if (answerSubmitted) {
         return;
     }
-
     selectedAnswerIndex = index;
     submitBtn.disabled = false;
 
     const choiceLabels = document.querySelectorAll(".choice-option");
 
+    //Removes the selected style from all choices
     choiceLabels.forEach(function(label) {
         label.classList.remove("selected");
     });
 
+    //Add the selceted style to the clicked choice
     choiceLabels[index].classList.add("selected");
 }
 
 // Checks whether the selected answer is correct
 function checkAnswer(event) {
+    // Prevents the form from submitting and refreshing the page
     event.preventDefault();
 
+    //stops the function if no answer was selected or the question was already answered
     if (selectedAnswerIndex === null || answerSubmitted) {
         return;
     }
@@ -238,6 +253,7 @@ function checkAnswer(event) {
     const currentQuestion = questions[currentQuestionIndex];
     const choiceLabels = document.querySelectorAll(".choice-option");
 
+    // Compare the selected answer index to the corret answer index
     if (selectedAnswerIndex === currentQuestion.correctIndex) {
         score++;
         feedbackMessage.textContent = "Correct!";
@@ -250,8 +266,10 @@ function checkAnswer(event) {
         choiceLabels[currentQuestion.correctIndex].classList.add("correct");
     }
 
+    //updates displayed score
     scoreText.textContent = `Score: ${score}`;
 
+    // hides submit and shows next after feedback
     submitBtn.classList.add("hidden");
     nextBtn.classList.remove("hidden");
 
@@ -262,7 +280,7 @@ function checkAnswer(event) {
     });
 }
 
-// Goes to the next question or shows results
+// Goes to the next question or shows final results
 function goToNextQuestion() {
     currentQuestionIndex++;
 
@@ -277,12 +295,14 @@ function goToNextQuestion() {
 function showResults() {
     showScreen("results");
 
+    //fills progress bar to 100%  at the end of quiz
     progressFill.style.width = "100%";
 
     finalScore.textContent = `You scored ${score} out of ${questions.length}.`;
 
     const percentage = (score / questions.length) * 100;
 
+// Chooses a final message based on user score
     if (percentage >= 90) {
         finalMessage.textContent = "Excellent work! You really know this material.";
     } else if (percentage >= 70) {
