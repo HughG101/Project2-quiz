@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- Sets Charaters and should make page better on mobile -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Development Quiz</title>
 
+
+ <!-- Links External CSS and JavaScript -->
     <link rel="stylesheet" href="styles/main.css">
     <script src="js/app.js" defer></script>
 </head>
 
 <body>
+<!-- Page header and quiz title with description -->
     <header class="site-header">
         <h1>World War Two Quiz</h1>
         <p>Test your knowledge on World War Two history.</p>
     </header>
 
+<!-- Main Quiz app area -->
     <main class="app-container">
         <!-- Start Screen -->
         <section id="start-screen" class="card">
@@ -23,44 +29,59 @@
                 This quiz is 10 questions long. You will see one question at a time,
                 get feedback after every answer, and receive your final score at the end.
             </p>
+
+            <!-- Start Quiz Button-->
             <button id="start-btn">Start Quiz</button>
         </section>
 
-        <!-- Quiz Screen -->
+        <!-- Quiz Screen (gives Current question, feed back and score ) -->
         <section id="quiz-screen" class="card hidden">
+           
+           <!-- Display progress and score -->
             <div class="quiz-info">
                 <p id="progress-text">Question 1 of 10</p>
                 <p id="score-text">Score: 0</p>
             </div>
 
+            <!-- Visual Progress Bar! (should fill as quiz continues)-->
             <div class="progress-bar">
                 <div id="progress-fill"></div>
             </div>
 
+            <!-- Java should change text for each question-->
             <h2 id="question-text">Question text goes here</h2>
 
+            <!-- Form for that holds answer choices and submot button-->
             <form id="answer-form">
                 <div id="choices-container" class="choices-grid">
                     <!-- JavaScript will add choices here -->
                 </div>
 
+                <!-- Disabled till users slects an answer -->
                 <button id="submit-btn" type="submit" disabled>Submit Answer</button>
             </form>
 
+            <!-- Shows correct or incorrect feedback -->
             <p id="feedback-message" class="feedback"></p>
 
+            <!-- moves to next question after feedback is shown -->
             <button id="next-btn" class="secondary-btn hidden">Next Question</button>
         </section>
 
-        <!-- Results Screen -->
+        <!-- Results Screen shown after the final question -->
         <section id="results-screen" class="card hidden">
             <h2>Quiz Complete!</h2>
+
+            <!-- JavaScript Updares these results at the end of quiz-->
             <p id="final-score">You scored 0 out of 10.</p>
             <p id="final-message">Results message goes here.</p>
+
+            <!-- Button to restart the quiz-->
             <button id="restart-btn">Restart Quiz</button>
         </section>
     </main>
 
+    <!-- Footer with copyright information-->
     <footer class="site-footer">
         <p>&copy; 2026 Web Development Quiz.</p>
     </footer>
